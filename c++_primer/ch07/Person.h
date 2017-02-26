@@ -8,10 +8,11 @@ using std::string;
 using std::istream;
 using std::ostream;
 
-struct Person
+class Person
 {   
-    string name;
-    string addr;
+public:
+    Person() = default;
+    Person(string n, string a): name(n), a(a) {};
 
     string getName() const{ 
         return name;
@@ -20,6 +21,10 @@ struct Person
     string getAddr() const{
         return addr;
     }
+
+private:
+    string name;
+    string addr;
 };
 
 istream & read(istream &is, Person &rhs){
